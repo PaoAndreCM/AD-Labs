@@ -4,11 +4,11 @@ public class Main {
 
 	public static void main(String[] args) {
 		start();
+		int x= 1+1;
 
 	}
 
 	private static void start() {
-		// TODO Auto-generated method stub
 		
 	}
 
