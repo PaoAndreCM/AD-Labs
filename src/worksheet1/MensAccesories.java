@@ -1,11 +1,15 @@
 package worksheet1;
 
 public class MensAccesories implements Node {
+	private int key;
+	
+	public MensAccesories(int key) {
+		this.key = key;
+	}
 
 	@Override
 	public int getKey() {
-		// TODO Auto-generated method stub
-		return 0;
+		return key;
 	}
 
 }
