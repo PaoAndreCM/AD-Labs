@@ -17,6 +17,7 @@ public class Main {
 		MensAccesories scarves = new MensAccesories(18);
 		MensAccesories handkerchiefs = new MensAccesories(46);
 		MensAccesories watches = new MensAccesories(12);
+		SelectionSort sort=new SelectionSort();
 		
 		ArrayList<Node> DataSet = new ArrayList<Node>();   //Should this be an arrayList of Nodes or of MensAccessories?
 		
@@ -35,6 +36,13 @@ public class Main {
 		{
 		    System.out.println(Datum.getKey());
 		}
+		sort.SelectionSort(DataSet);
+		System.out.println("Sorted List ");
+		for(Node Datum : DataSet)      
+		{
+		    System.out.println(Datum.getKey());
+		}
+		
 
 	}
 
