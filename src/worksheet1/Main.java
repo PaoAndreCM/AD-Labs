@@ -17,7 +17,7 @@ public class Main {
 		MensAccesories scarves = new MensAccesories(18);
 		MensAccesories handkerchiefs = new MensAccesories(46);
 		MensAccesories watches = new MensAccesories(12);
-		SelectionSort sort=new SelectionSort();
+		
 		
 		ArrayList<Node> DataSet = new ArrayList<Node>();   //Should this be an arrayList of Nodes or of MensAccessories?
 		
@@ -32,18 +32,26 @@ public class Main {
 		DataSet.add(handkerchiefs);
 		DataSet.add(watches);
 		
-		for(Node Datum : DataSet)      // connected to previous comment: Node? or MensAccessories?
+		for(Node Datum : DataSet)      // connected to previous comment: does this need to be type Node? or MensAccessories?
 		{
 		    System.out.println(Datum.getKey());
 		}
-		sort.SelectionSort(DataSet);
+		
+		SelectionSort sort=new SelectionSort(DataSet);
+		
 		System.out.println("Sorted List ");
 		for(Node Datum : DataSet)      
 		{
 		    System.out.println(Datum.getKey());
 		}
 		
-
+		int[] arr = { 10, 7, 8, 9, 1, 5 };
+	    int n = arr.length;
+	      
+	   
+	    QuickSort.quickSort(arr, 0, n - 1);
+	    System.out.println("Sorted array: ");
+	    QuickSort.printArray(arr, n);
 	}
 
 	private static void start() {

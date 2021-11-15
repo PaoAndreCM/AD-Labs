@@ -5,8 +5,9 @@ import java.util.ArrayList;
 public class SelectionSort {
 	ArrayList<Node> a=new ArrayList<Node>();
 	
-	public void SelectionSort(ArrayList<Node> a) {
+	public SelectionSort(ArrayList<Node> a) {
 		int n=a.size();
+		System.out.println("this is n: " + n);
 		for(int i=0;i<n;i++) {
 			int minIndex=i;
 			int minValue=a.get(i).getKey();
