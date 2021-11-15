@@ -32,26 +32,10 @@ public class Main {
 		DataSet.add(handkerchiefs);
 		DataSet.add(watches);
 		
-		for(Node Datum : DataSet)      // connected to previous comment: does this need to be type Node? or MensAccessories?
-		{
-		    System.out.println(Datum.getKey());
-		}
-		
-		SelectionSort sort=new SelectionSort(DataSet);
-		
-		System.out.println("Sorted List ");
-		for(Node Datum : DataSet)      
-		{
-		    System.out.println(Datum.getKey());
-		}
-		
-		int[] arr = { 10, 7, 8, 9, 1, 5 };
-	    int n = arr.length;
-	      
-	   
-	    QuickSort.quickSort(arr, 0, n - 1);
+		QuickSort.printArray(DataSet, 10);
+	    QuickSort.quickSort(DataSet, 0,9);
 	    System.out.println("Sorted array: ");
-	    QuickSort.printArray(arr, n);
+	    QuickSort.printArray(DataSet, 10);
 	}
 
 	private static void start() {

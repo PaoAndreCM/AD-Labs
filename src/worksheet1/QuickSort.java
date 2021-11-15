@@ -1,15 +1,14 @@
 package worksheet1;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class QuickSort {
 
-	// A utility function to swap two elements
+	// A utility function to swap two elements in ArrayList
 	static void swap(ArrayList<Node> al, int i, int j)
 	{
-	    Node temp = al.get(i);
-	    //al.add(i) = al.get(j);
-	    //al.add(j) = temp;
+		Collections.swap(al, i, j);
 	}
 	  
 	/* This function takes last element as pivot, places
@@ -21,7 +20,7 @@ public class QuickSort {
 	{
 	      
 	    // pivot
-	    Node pivot = al.get(high); 
+	    int pivot = al.get(high).getKey(); 
 	      
 	    // Index of smaller element and
 	    // indicates the right position
@@ -33,8 +32,7 @@ public class QuickSort {
 	          
 	        // If current element is smaller 
 	        // than the pivot
-	        if (al.get(j) < pivot) 
-	        {
+	        if (al.get(j).getKey() < pivot) {
 	              
 	            // Increment index of 
 	            // smaller element
@@ -47,7 +45,7 @@ public class QuickSort {
 	}
 	  
 	/* The main function that implements QuickSort
-	          arr[] --> Array to be sorted,
+	          al --> ArrayList to be sorted,
 	          low --> Starting index,
 	          high --> Ending index
 	 */
@@ -56,7 +54,7 @@ public class QuickSort {
 	    if (low < high) 
 	    {
 	          
-	        // pi is partitioning index, arr[p]
+	        // pi is partitioning index, al
 	        // is now at right place 
 	        int pi = partition(al, low, high);
 	  
@@ -68,14 +66,14 @@ public class QuickSort {
 	}
 	  
 	// Function to print an array 
-	static void printArray(int[] arr, int size)
+	static void printArray(ArrayList<Node> arr, int size)
 	{
 	    for(int i = 0; i < size; i++)
-	        System.out.print(arr[i] + " ");
+	        System.out.print(arr.get(i).getKey() + " ");
 	          
 	    System.out.println();
 	}
 	  
 }
 	  
-	// This code is contributed by Ayush Choudhary
+	// This code is modified by Paola Carreño based on Ayush Choudhary's contribution on GeeksForGeeks.com
