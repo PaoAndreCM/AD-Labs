@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class Main {
 
 	public static void main(String[] args) {
-		start();
 	
 		MensAccesories sunglasses = new MensAccesories(9);
 		MensAccesories ties = new MensAccesories(26);
@@ -17,7 +16,6 @@ public class Main {
 		MensAccesories scarves = new MensAccesories(18);
 		MensAccesories handkerchiefs = new MensAccesories(46);
 		MensAccesories watches = new MensAccesories(12);
-		
 		
 		ArrayList<Node> DataSet = new ArrayList<Node>();   //Should this be an arrayList of Nodes or of MensAccessories?
 		
@@ -32,12 +30,19 @@ public class Main {
 		DataSet.add(handkerchiefs);
 		DataSet.add(watches);
 		QuickSort qSort=new QuickSort();
+		SelectionSort sSort = new SelectionSort(DataSet);
+
 		
 		
-		qSort.printArray(DataSet, 10);
-	    qSort.quickSort(DataSet, 0,9);
-	    System.out.println("Sorted array: ");
-	    qSort.printArray(DataSet, 10);
+//		qSort.printArray(DataSet, 10);
+//	    qSort.quickSort(DataSet, 0,9);
+//	    System.out.println("Sorted array: ");
+//	    qSort.printArray(DataSet, 10);
+		sSort.sortAlgorithm();
+//		for(int i = 0; i < DataSet.size(); i++)
+//	        System.out.print(DataSet.get(i).getKey() + " ");
+//	          
+//	    System.out.println();
 	}
 
 	private static void start() {

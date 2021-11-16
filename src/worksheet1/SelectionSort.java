@@ -3,10 +3,10 @@ package worksheet1;
 import java.util.ArrayList;
 
 public class SelectionSort extends AbstractSort{
-	ArrayList<Node> a=new ArrayList<Node>();
+//	ArrayList<Node> a=new ArrayList<Node>();
 	
-	public SelectionSort() {
-		
+	public SelectionSort(ArrayList<Node> a) {
+		al=a;
 	}
 //	public void sortArr(ArrayList<Node> a) {
 //		int n=a.size();
@@ -28,22 +28,26 @@ public class SelectionSort extends AbstractSort{
 //	}
 	@Override
 	public void sortAlgorithm() {
-		int n=a.size();
-		System.out.println("this is n: " + n);
+		System.out.println(" SS Before Sort: ");
+		printArrayList(al);
+		int n=al.size();
+//		System.out.println("this is n: " + n);
 		for(int i=0;i<n;i++) {
 			int minIndex=i;
-			int minValue=a.get(i).getKey();
+			int minValue=al.get(i).getKey();
 			for(int j=i+1;j<n;j++) {
-				if (a.get(j).getKey()<minValue) {
+				if (al.get(j).getKey()<minValue) {
 					minIndex=j;
-					minValue=a.get(j).getKey();
-					System.out.println("minvalue"+minValue);
-					System.out.println("minIndex"+minIndex);
+					minValue=al.get(j).getKey();
+//					System.out.println("minvalue"+minValue);
+//					System.out.println("minIndex"+minIndex);
 				}
 				
 			}
-			swap(a,i,minIndex);
+			swap(al,i,minIndex);
 		}
+		System.out.println(" SS After Sort: ");
+		printArrayList(al);
 		
 	}
 	

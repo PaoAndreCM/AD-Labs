@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class QuickSort extends AbstractSort{
-
+	private int median = 0;
+	private int start = 0;
+	private int end = 0;
 	// A utility function to swap two elements in ArrayList
 //	private void swap(ArrayList al, int i, int j)
 //	{
@@ -73,9 +75,10 @@ public class QuickSort extends AbstractSort{
 
 	@Override
 	public void sortAlgorithm() {
-		// TODO Auto-generated method stub
 		
 	}
+
+	
 	  
 }
 	  
