@@ -3,7 +3,6 @@ package worksheet1;
 import java.util.ArrayList;
 
 public class SelectionSort extends AbstractSort{
-//	ArrayList<Node> a=new ArrayList<Node>();
 	
 	public SelectionSort(ArrayList<Node> a) {
 		al=a;

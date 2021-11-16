@@ -34,11 +34,11 @@ public class Main {
 
 		
 		
-//		qSort.printArray(DataSet, 10);
-//	    qSort.quickSort(DataSet, 0,9);
-//	    System.out.println("Sorted array: ");
-//	    qSort.printArray(DataSet, 10);
-		sSort.sortAlgorithm();
+		qSort.printArrayList(DataSet);
+	    qSort.quickSort(DataSet, 0,9);
+	    System.out.println("Sorted array: ");
+	    qSort.printArrayList(DataSet);
+		//sSort.sortAlgorithm();
 //		for(int i = 0; i < DataSet.size(); i++)
 //	        System.out.print(DataSet.get(i).getKey() + " ");
 //	          
