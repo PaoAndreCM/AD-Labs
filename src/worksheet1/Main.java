@@ -31,11 +31,13 @@ public class Main {
 		DataSet.add(scarves);
 		DataSet.add(handkerchiefs);
 		DataSet.add(watches);
+		QuickSort qSort=new QuickSort();
 		
-		QuickSort.printArray(DataSet, 10);
-	    QuickSort.quickSort(DataSet, 0,9);
+		
+		qSort.printArray(DataSet, 10);
+	    qSort.quickSort(DataSet, 0,9);
 	    System.out.println("Sorted array: ");
-	    QuickSort.printArray(DataSet, 10);
+	    qSort.printArray(DataSet, 10);
 	}
 
 	private static void start() {

@@ -3,21 +3,20 @@ package worksheet1;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class QuickSort {
+public class QuickSort extends AbstractSort{
 
 	// A utility function to swap two elements in ArrayList
-	static void swap(ArrayList<Node> al, int i, int j)
-	{
-		Collections.swap(al, i, j);
-	}
+//	private void swap(ArrayList al, int i, int j)
+//	{
+//		Collections.swap(al, i, j);
+//	}
 	  
 	/* This function takes last element as pivot, places
 	   the pivot element at its correct position in sorted
 	   array, and places all smaller (smaller than pivot)
 	   to left of pivot and all greater elements to right
 	   of pivot */
-	static int partition(ArrayList<Node> al, int low, int high)
-	{
+	private int partition(ArrayList<Node> al, int low, int high){
 	      
 	    // pivot
 	    int pivot = al.get(high).getKey(); 
@@ -49,8 +48,7 @@ public class QuickSort {
 	          low --> Starting index,
 	          high --> Ending index
 	 */
-	static void quickSort(ArrayList<Node> al, int low, int high)
-	{
+	public void quickSort(ArrayList<Node> al, int low, int high){
 	    if (low < high) 
 	    {
 	          
@@ -66,12 +64,17 @@ public class QuickSort {
 	}
 	  
 	// Function to print an array 
-	static void printArray(ArrayList<Node> arr, int size)
-	{
+	protected void printArray(ArrayList<Node> arr, int size){
 	    for(int i = 0; i < size; i++)
 	        System.out.print(arr.get(i).getKey() + " ");
 	          
 	    System.out.println();
+	}
+
+	@Override
+	public void sortAlgorithm() {
+		// TODO Auto-generated method stub
+		
 	}
 	  
 }
