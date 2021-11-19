@@ -40,10 +40,13 @@ public class Main {
 		//SelectionSort sSort = new SelectionSort(DataSet);
 
 		
-		qSort.start();
-		int swaps = qSort.getSwaps();
-		int comps = qSort.getComparisons();
-		System.out.println("Swaps = " + swaps);
-		System.out.println("Comparisons = " + comps);	
+		for(int i = 1; i <= 1000; i++) {
+			qSort.start();
+			int swaps = qSort.getSwaps();
+			int comps = qSort.getComparisons();
+			System.out.println("Swaps = " + swaps);
+			System.out.println("Comparisons = " + comps);
+			System.out.println("--------------------");
+		}	
 	}
 }
