@@ -36,14 +36,16 @@ public class Main {
 		DataSet.add(scarves);
 		DataSet.add(handkerchiefs);
 		DataSet.add(watches);
-		QuickSort qSort=new QuickSort(DataSet);
+		QuickSort qSort=new QuickSort(DataSet,1);
 		//SelectionSort sSort = new SelectionSort(DataSet);
 
-		
-		qSort.start();
-		int swaps = qSort.getSwaps();
-		int comps = qSort.getComparisons();
-		System.out.println("Swaps = " + swaps);
-		System.out.println("Comparisons = " + comps);	
+		for(int i = 1; i <= 1; i++) {
+			qSort.start();
+			int swaps = qSort.getSwaps();
+			int comps = qSort.getComparisons();
+			System.out.println("Swaps = " + swaps);
+			System.out.println("Comparisons = " + comps);
+			System.out.println("--------------------");
+		}
 	}
 }
