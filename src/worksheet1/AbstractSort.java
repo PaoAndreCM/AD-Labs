@@ -1,3 +1,11 @@
+
+/**
+ * Abstract class for Sorting Algorithms
+ * 
+ * @author Paola Andrea Carreno Mosquera, Chavindu Shamilka Bandara Wijayaratna, Omar Zhody Fathy Shaban
+ * @version 1.0
+ */
+
 package worksheet1;
 
 import java.util.ArrayList;
@@ -7,12 +15,15 @@ public abstract class AbstractSort {
 	protected ArrayList<Node> al;
 	protected int comparisons;
 	protected int swaps;
+	
+	public int getComparisons() {
+		return comparisons;
+	}
 
-//	public final void swap(ArrayList list, int firstInd, int secondInd) {
-//		Object temp = list.get(firstInd);
-//		list.set(firstInd, list.get(secondInd));
-//		list.set(secondInd, temp);
-//	} 
+	public int getSwaps() {
+		return swaps;
+	}
+
 	public final void swap(ArrayList<Node> al, int i, int j){
 		Collections.swap(al, i, j);
 	}
@@ -22,8 +33,6 @@ public abstract class AbstractSort {
 			System.out.print(al.get(i).getKey() + " ");
 		}
 		System.out.println();
-		System.out.println("\nNumber of comps = " + comparisons);
-		System.out.println("Number of swaps = " + swaps);
 	}
 	
 	public abstract void sortAlgorithm();
@@ -31,6 +40,10 @@ public abstract class AbstractSort {
 	public final void start() {
 		comparisons = 0;
 		swaps = 0;
+		System.out.println("Before sort: ");
+		printArrayList(al);
 		sortAlgorithm();
+		System.out.println("Sorted array: ");
+		printArrayList(al);
 	}
 }

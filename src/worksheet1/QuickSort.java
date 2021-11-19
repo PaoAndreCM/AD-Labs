@@ -1,41 +1,45 @@
+/**
+ * Class for Quick Sort Algorithm
+ * 
+ * @author Paola Andrea Carreno Mosquera, Chavindu Shamilka Bandara Wijayaratna, Omar Zhody Fathy Shaban
+ * @version 1.0
+ */
+
 package worksheet1;
 
 import java.util.ArrayList;
-//import java.util.Collections;
 
 public class QuickSort extends AbstractSort{
 	  
-	/* This function takes last element as pivot, places
-	   the pivot element at its correct position in sorted
-	   array, and places all smaller (smaller than pivot)
-	   to left of pivot and all greater elements to right
-	   of pivot */
+	public QuickSort(ArrayList<Node> ArrList) {
+		al = ArrList;
+	}
+
 	private int partition(ArrayList<Node> al, int low, int high){
 	      
 	    // pivot
 	    int pivot = al.get(high).getKey(); 
 	      
-	    // Index of smaller element and
-	    // indicates the right position
-	    // of pivot found so far
+	    // Index of smaller element and indicates the right position of pivot found so far
 	    int i = (low - 1); 
 	  
-	    for(int j = low; j <= high - 1; j++)
-	    {
-	          
-	        // If current element is smaller 
-	        // than the pivot
-	        if (al.get(j).getKey() < pivot) {
-	        	comparisons = comparisons + 1 ;      
-	            // Increment index of 
-	            // smaller element
+	    for(int j = low; j <= high - 1; j++) { 
+	    	//increment the number of comparisons
+	    	// If current element is smaller than the pivot
+        	comparisons = comparisons + 1 ;
+	        if (al.get(j).getKey() < pivot) {      
+	            // Increment index of the smaller element
 	            i++; 
 	            swap(al, i, j);
-	            swaps = swaps +1;
+	            if (i != j) {
+	            	swaps = swaps +1;
+	            }
 	        }
 	    }
 	    swap(al, i + 1, high);
-	    swaps = swaps +1;
+	    if ((i + 1) != high) {
+	    	swaps = swaps +1;
+	    }
 	    return (i + 1);
 	}
 	  
@@ -45,9 +49,9 @@ public class QuickSort extends AbstractSort{
 	          high --> Ending index
 	 */
 	public void quickSort(ArrayList<Node> al, int low, int high){
+		
 	    if (low < high) 
-	    {
-	    	comparisons = comparisons + 1 ; 
+	    { 
 	        // pi is partitioning index, al
 	        // is now at right place 
 	        int pi = partition(al, low, high);
@@ -61,11 +65,6 @@ public class QuickSort extends AbstractSort{
 
 	@Override
 	public void sortAlgorithm() {
-		
-	}
-
-	
-	  
+		quickSort(al, 0, al.size() - 1);
+	}	  
 }
-	  
-	// This code is modified by Paola Carreño based on Ayush Choudhary's contribution on GeeksForGeeks.com

@@ -1,3 +1,10 @@
+/**
+ * Class for Test program
+ * 
+ * @author Paola Andrea Carreno Mosquera, Shamilka 
+ * @version 1.0
+ */
+
 package worksheet1;
 
 import java.util.ArrayList;
@@ -6,18 +13,18 @@ public class Main {
 
 	public static void main(String[] args) {
 	
-		MensAccesories sunglasses = new MensAccesories(9);
-		MensAccesories ties = new MensAccesories(26);
-		MensAccesories cufflinks = new MensAccesories(16);
-		MensAccesories wallets = new MensAccesories(34);
-		MensAccesories belts = new MensAccesories(31);
-		MensAccesories hats = new MensAccesories(5);
-		MensAccesories gloves = new MensAccesories(10);
-		MensAccesories scarves = new MensAccesories(18);
-		MensAccesories handkerchiefs = new MensAccesories(46);
-		MensAccesories watches = new MensAccesories(12);
+		MensAccessories sunglasses = new MensAccessories(9);
+		MensAccessories ties = new MensAccessories(26);
+		MensAccessories cufflinks = new MensAccessories(16);
+		MensAccessories wallets = new MensAccessories(34);
+		MensAccessories belts = new MensAccessories(31);
+		MensAccessories hats = new MensAccessories(5);
+		MensAccessories gloves = new MensAccessories(10);
+		MensAccessories scarves = new MensAccessories(18);
+		MensAccessories handkerchiefs = new MensAccessories(46);
+		MensAccessories watches = new MensAccessories(12);
 		
-		ArrayList<Node> DataSet = new ArrayList<Node>();   //Should this be an arrayList of Nodes or of MensAccessories?
+		ArrayList<Node> DataSet = new ArrayList<Node>();
 		
 		DataSet.add(sunglasses);
 		DataSet.add(ties);
@@ -29,24 +36,14 @@ public class Main {
 		DataSet.add(scarves);
 		DataSet.add(handkerchiefs);
 		DataSet.add(watches);
-		QuickSort qSort=new QuickSort();
-		SelectionSort sSort = new SelectionSort(DataSet);
+		QuickSort qSort=new QuickSort(DataSet);
+		//SelectionSort sSort = new SelectionSort(DataSet);
 
 		
-		
-		qSort.printArrayList(DataSet);
-	    qSort.quickSort(DataSet, 0,9);
-	    System.out.println("Sorted array: ");
-	    qSort.printArrayList(DataSet);
-		//sSort.sortAlgorithm();
-//		for(int i = 0; i < DataSet.size(); i++)
-//	        System.out.print(DataSet.get(i).getKey() + " ");
-//	          
-//	    System.out.println();
+		qSort.start();
+		int swaps = qSort.getSwaps();
+		int comps = qSort.getComparisons();
+		System.out.println("Swaps = " + swaps);
+		System.out.println("Comparisons = " + comps);	
 	}
-
-	private static void start() {
-		
-	}
-
 }
