@@ -1,7 +1,7 @@
 /**
  * Class for Quick Sort Algorithm
  * 
- * @author Paola Andrea Carreno Mosquera, Chavindu Shamilka Bandara Wijayaratna, Omar Zhody Fathy Shaban
+ * @author Paola Andrea Carreno Mosquera
  * @version 1.0
  */
 
