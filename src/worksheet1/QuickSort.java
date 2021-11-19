@@ -50,8 +50,7 @@ public class QuickSort extends AbstractSort{
 	 */
 	public void quickSort(ArrayList<Node> al, int low, int high){
 		
-	    if (low < high) 
-	    { 
+	    if (low < high) { 
 	        // pi is partitioning index, al
 	        // is now at right place 
 	        int pi = partition(al, low, high);
