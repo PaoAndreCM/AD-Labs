@@ -18,18 +18,38 @@ public class SortedBinaryTree<E> {
 	}
 
 	public Iterator<Node> iterator() {
-		//TODO
-		return null; //TODO return correct data
+		return new Iterator<Node>() {
+			private Node temp = min(root);
+
+			public boolean hasNext() {
+				return temp != null;
+			}
+
+			public Node next() {
+				Node current = temp;
+				temp = succ(temp);
+				return current;
+			}
+		};
 	}
 	
 	public Node succ(Node k) {
-		//TODO
-		return null; //TODO return correct data
+		if (k.getRight() != null) {
+			return min(k.getRight());
+		} else {
+			Node p = k.getParent();
+			while (p != null && p.getKey() <= k.getKey()) {
+				p = p.getParent();
+			}
+			return p;
+		}
 	}
 	
 	public Node find(int k) {
-		//TODO
-		return null; //TODO return correct data
+		if (root == null) {
+			return null;
+		}
+		return addRecursive(root, k);
 	}
 	
 	public Node min(Node k) {
