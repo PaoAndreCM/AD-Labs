@@ -15,6 +15,8 @@ public class Node {
 	
 	public Node(int key) {
 		this.key = key;
+		right = null;
+		left = null;
 	}
 	public int getKey() {
 		return key;

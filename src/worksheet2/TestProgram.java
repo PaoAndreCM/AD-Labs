@@ -15,7 +15,7 @@ public class TestProgram {
 		
 		for (int i = 0; i < 100; i++) {
 			Inventory NumInStock = new Inventory(randNumItems(50));
-			
+			MyTree.insert(NumInStock);
 		}
 	}
            
