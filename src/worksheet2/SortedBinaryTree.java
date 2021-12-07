@@ -6,7 +6,7 @@ public class SortedBinaryTree<E> {
 	private Node root;
 
 	public SortedBinaryTree() {
-		
+		root=null;
 	}
 
 	public Node getRoot() {
@@ -53,8 +53,10 @@ public class SortedBinaryTree<E> {
 	}
 	
 	public Node min(Node k) {
-		//TODO
-		return null; //TODO return correct data
+		while (k.getLeft() != null) {
+			k = k.getLeft();
+		}
+		return k;
 	}
 	
 	private Node addRecursive(Node current, int k) {

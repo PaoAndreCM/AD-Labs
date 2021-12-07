@@ -11,12 +11,15 @@ public class TestProgram {
 
 	public static void main(String[] args) {
 		
-		SortedBinaryTree<Node> MyTree = new SortedBinaryTree<Node>();
+		SortedBinaryTree<Node> myTree = new SortedBinaryTree<Node>();
 		
 		for (int i = 0; i < 100; i++) {
 			Inventory NumInStock = new Inventory(randNumItems(50));
-			MyTree.insert(NumInStock);
+			myTree.insert(NumInStock);
 		}
+		Node x = myTree.find(41);
+		System.out.println();
+		System.out.println(x.getKey());
 	}
            
 }
