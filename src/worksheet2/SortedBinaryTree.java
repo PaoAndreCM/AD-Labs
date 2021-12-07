@@ -2,35 +2,62 @@ package worksheet2;
 
 import java.util.Iterator;
 
-
-
 public class SortedBinaryTree<E> {
 	private Node root;
 
 	public SortedBinaryTree() {
-		root=null;
+		root = null;
 	}
 
 	public Node getRoot() {
 		return root;
 	}
-
+	
 	public void insert(Node k) {
-		root = addRecursive(root, k.getKey());
+		if (root == null) {
+			root = k;
+		} else {
+			insertAfter(root, k, null);
+		}
 	}
+
+	private void insertAfter(Node root, Node k, Node pre) {
+		if (root == null) {
+			root = k;
+			k.setLeft(null);
+			k.setRight(null);
+			k.setParent(pre);
+			//depending on k > or < than pre 
+			if (k.getKey() < pre.getKey()) {
+				pre.setLeft(k);
+			} else {
+				pre.setRight(k);
+		}
+		} else if (k.getKey() < root.getKey()) {
+			insertAfter(root.getLeft(),k,root);
+			
+		} else {
+			insertAfter(root.getLeft(),k,root);
+		}
+	
+}
 
 	public Iterator<Node> iterator() {
 		return new Iterator<Node>() {
 			private Node temp = min(root);
-
+			
+			@Override
 			public boolean hasNext() {
 				return temp != null;
 			}
-
+			
+			@Override
 			public Node next() {
 				Node current = temp;
 				temp = succ(temp);
+				//System.out.println(current.getKey());
 				return current;
+				
 			}
 		};
 	}
@@ -54,18 +81,6 @@ public class SortedBinaryTree<E> {
 		return findRecursive(root, k);
 	}
 	
-	private Node findRecursive(Node root, int k) {
-		if (root.getKey() == k) {
-			return root;
-		} else {
-			if (root.getKey() > k) {
-				return findRecursive(root.getLeft(), k);
-			} else {
-				return findRecursive(root.getRight(), k);
-			}
-		}
-	}
-	
 	public Node min(Node k) {
 		while (k.getLeft() != null) {
 			k = k.getLeft();
@@ -73,23 +88,20 @@ public class SortedBinaryTree<E> {
 		return k;
 	}
 	
-	private Node addRecursive(Node current, int k) {
-		//insert node when we've achieved a leaf node
-		if (current == null) {
-			return new Node(k);
-		}
-		
-		// if k is smaller than the current k, go to the left child
-		if (k < current.getKey()) {
-			current.setLeft(addRecursive(current.getLeft(), k));
-		// if k is greater than the current k, go to the right child
-		} else if (k > current.getKey()) {
-			current.setRight(addRecursive(current.getRight(), k));
+	private Node findRecursive(Node root, int k) {
+		// if the value to be found (k) is equal to the node we're in, return that node
+		if (root.getKey() == k) {
+			return root;
+			
+		// travel through the tree the tree
 		} else {
-			// when k already exists in the tree
-			return current;
+			//if the current value to be found is larger than the value to be found, go to the right
+			if (root.getKey() > k) {
+				return findRecursive(root.getLeft(), k);
+			} else {
+			//if the current value to be found is smaller than the value to be found, go to the left
+				return findRecursive(root.getRight(), k);
+			}
 		}
-		
-		return current;
 	}
 }
