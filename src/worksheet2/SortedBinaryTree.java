@@ -2,6 +2,8 @@ package worksheet2;
 
 import java.util.Iterator;
 
+
+
 public class SortedBinaryTree<E> {
 	private Node root;
 
@@ -49,7 +51,19 @@ public class SortedBinaryTree<E> {
 		if (root == null) {
 			return null;
 		}
-		return addRecursive(root, k);
+		return findRecursive(root, k);
+	}
+	
+	private Node findRecursive(Node root, int k) {
+		if (root.getKey() == k) {
+			return root;
+		} else {
+			if (root.getKey() > k) {
+				return findRecursive(root.getLeft(), k);
+			} else {
+				return findRecursive(root.getRight(), k);
+			}
+		}
 	}
 	
 	public Node min(Node k) {
