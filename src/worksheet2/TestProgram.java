@@ -7,7 +7,7 @@ public class TestProgram {
 	// This function generates a random number between 0 and max
 	public static int randNumItems(int max) {
 	    int rand = (int)(Math.random() * max);
-        //System.out.println(rand);
+        System.out.println(rand);
         return rand;
 	}
 

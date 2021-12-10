@@ -32,12 +32,12 @@ public class SortedBinaryTree<E> {
 				pre.setLeft(k);
 			} else {
 				pre.setRight(k);
-		}
+			}
 		} else if (k.getKey() < root.getKey()) {
 			insertAfter(root.getLeft(),k,root);
 			
 		} else {
-			insertAfter(root.getLeft(),k,root);
+			insertAfter(root.getRight(),k,root);
 		}
 	
 }
