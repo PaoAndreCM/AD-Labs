@@ -109,7 +109,8 @@ public class TestProgram {
 		
 		//iterating through tree inventory2 and inserting each of its nodes in tree inventory1
 		while (iterator.hasNext()) {
-			inventory1.insert(iterator.next());
+			Node node = new Node(iterator.next().getKey());
+			inventory1.insert(node);
 		}
 		
 		System.out.println();
