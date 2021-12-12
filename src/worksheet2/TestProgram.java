@@ -1,3 +1,9 @@
+/**
+ * Class for main 
+ * 
+ * @author Paola Andrea Carreno Mosquera
+ * @version 1.0
+ */
 package worksheet2;
 
 import java.util.Iterator;
@@ -14,9 +20,6 @@ public class TestProgram {
 	//This function prints a tree inorder
 	public static void printTree(SortedBinaryTree<Node> tree) {
 		Iterator<Node> iterator = tree.iterator();
-		System.out.println();
-		System.out.println();
-		System.out.println("Here's your tree: ");
 		while (iterator.hasNext()) {
 			System.out.print(iterator.next().getKey());
 			System.out.print(" ");
@@ -69,16 +72,7 @@ public class TestProgram {
 		System.out.println();
 		
 		//Uncomment bellow to print whole tree inorder
-		/*
-		System.out.println("Whole tree:");
-		iterator = myTree.iterator();
-		while (iterator.hasNext()) {
-			System.out.print(iterator.next().getKey());
-			System.out.print(" ");
-		}
-		*/
-		
-		printTree(myTree);
+		//printTree(myTree);
 		
 		//One store of our brand is closing down. The inventory of that store, inventory2, will be added to the inventory of
 		//another store in the same city, inventory 1:
@@ -87,6 +81,9 @@ public class TestProgram {
 		//insert said node in other tree
 
 		//First tree to be merged
+		System.out.println();
+		System.out.println("-----------------");
+		System.out.println("Trees to be merged");
 		SortedBinaryTree<Node> inventory1 = new SortedBinaryTree<Node>();
 		
 		// Generating and inserting 10 nodes in first tree
@@ -94,6 +91,7 @@ public class TestProgram {
 			Inventory NumInStock = new Inventory(randNumItems(150));
 			inventory1.insert(NumInStock);
 		}
+		System.out.println("Tree A: ");
 		printTree(inventory1);
 		//Second tree to be merged 1
 		SortedBinaryTree<Node> inventory2 = new SortedBinaryTree<Node>();
@@ -103,6 +101,8 @@ public class TestProgram {
 			Inventory NumInStock = new Inventory(randNumItems(150));
 			inventory2.insert(NumInStock);
 		}
+		System.out.println();
+		System.out.println("Tree B: ");
 		printTree(inventory2);
 		
 		iterator = inventory2.iterator();
@@ -115,12 +115,13 @@ public class TestProgram {
 		
 		System.out.println();
 		System.out.println("-----------------");
-		System.out.println("Merged tree:");
+		System.out.println("Merged tree: ");
 		iterator = inventory1.iterator();
-		while (iterator.hasNext()) {
-			System.out.print(iterator.next().getKey());
-			System.out.print(" ");
-		}
+		printTree(inventory1);
+//		while (iterator.hasNext()) {
+//			System.out.print(iterator.next().getKey());
+//			System.out.print(" ");
+//		}
 		
 		//Node x = myTree.find(41);
 		//System.out.println(x.getKey());

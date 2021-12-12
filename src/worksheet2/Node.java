@@ -1,5 +1,5 @@
 /**
- * Interface for Node
+ * Class for Node
  * 
  * @author Paola Andrea Carreno Mosquera
  * @version 1.0

@@ -1,3 +1,14 @@
+/**
+ * Class for sorted binary tree. This class inserts nodes whithin a tree keeping 
+ * all nodes smaller than the root to its left, and greater than the root
+ * to its right. It also establishes relationships between nodes and parents and 
+ * vice versa.
+ * 
+ * @author Paola Andrea Carreno Mosquera
+ * @contributor Shamilka 
+ * @version 1.0
+ */
+
 package worksheet2;
 
 import java.util.Iterator;
@@ -20,27 +31,6 @@ public class SortedBinaryTree<E> {
 			insertAfter(root, k, null);
 		}
 	}
-
-	private void insertAfter(Node root, Node k, Node pre) {
-		if (root == null) {
-			root = k;
-			k.setLeft(null);
-			k.setRight(null);
-			k.setParent(pre);
-			//depending on k > or < than pre 
-			if (k.getKey() < pre.getKey()) {
-				pre.setLeft(k);
-			} else {
-				pre.setRight(k);
-			}
-		} else if (k.getKey() < root.getKey()) {
-			insertAfter(root.getLeft(),k,root);
-			
-		} else {
-			insertAfter(root.getRight(),k,root);
-		}
-	
-}
 
 	public Iterator<Node> iterator() {
 		return new Iterator<Node>() {
@@ -86,6 +76,27 @@ public class SortedBinaryTree<E> {
 			k = k.getLeft();
 		}
 		return k;
+	}
+	
+	private void insertAfter(Node root, Node k, Node pre) {
+		if (root == null) {
+			root = k;
+			k.setLeft(null);
+			k.setRight(null);
+			k.setParent(pre);
+			//depending on k > or < than pre 
+			if (k.getKey() < pre.getKey()) {
+				pre.setLeft(k);
+			} else {
+				pre.setRight(k);
+			}
+		} else if (k.getKey() < root.getKey()) {
+			insertAfter(root.getLeft(),k,root);
+			
+		} else {
+			insertAfter(root.getRight(),k,root);
+		}
+	
 	}
 	
 	private Node findRecursive(Node root, int k) {
