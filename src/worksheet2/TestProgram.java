@@ -118,10 +118,6 @@ public class TestProgram {
 		System.out.println("Merged tree: ");
 		iterator = inventory1.iterator();
 		printTree(inventory1);
-//		while (iterator.hasNext()) {
-//			System.out.print(iterator.next().getKey());
-//			System.out.print(" ");
-//		}
 		
 		//Node x = myTree.find(41);
 		//System.out.println(x.getKey());
