@@ -10,6 +10,18 @@ public class TestProgram {
         //System.out.println(rand);
         return rand;
 	}
+	
+	//This function prints a tree inorder
+	public static void printTree(SortedBinaryTree<Node> tree) {
+		Iterator<Node> iterator = tree.iterator();
+		System.out.println();
+		System.out.println();
+		System.out.println("Here's your tree: ");
+		while (iterator.hasNext()) {
+			System.out.print(iterator.next().getKey());
+			System.out.print(" ");
+		}
+	}
 
 	public static void main(String[] args) {
 		
@@ -65,6 +77,49 @@ public class TestProgram {
 			System.out.print(" ");
 		}
 		*/
+		
+		printTree(myTree);
+		
+		//One store of our brand is closing down. The inventory of that store, inventory2, will be added to the inventory of
+		//another store in the same city, inventory 1:
+		
+		//iterate through each node of one tree
+		//insert said node in other tree
+
+		//First tree to be merged
+		SortedBinaryTree<Node> inventory1 = new SortedBinaryTree<Node>();
+		
+		// Generating and inserting 10 nodes in first tree
+		for (int i = 0; i < 10; i++) {
+			Inventory NumInStock = new Inventory(randNumItems(150));
+			inventory1.insert(NumInStock);
+		}
+		printTree(inventory1);
+		//Second tree to be merged 1
+		SortedBinaryTree<Node> inventory2 = new SortedBinaryTree<Node>();
+				
+		// Generating and inserting 10 nodes in second tree
+		for (int i = 0; i < 10; i++) {
+			Inventory NumInStock = new Inventory(randNumItems(150));
+			inventory2.insert(NumInStock);
+		}
+		printTree(inventory2);
+		
+		iterator = inventory2.iterator();
+		
+		//iterating through tree inventory2 and inserting each of its nodes in tree inventory1
+		while (iterator.hasNext()) {
+			inventory1.insert(iterator.next());
+		}
+		
+		System.out.println();
+		System.out.println("-----------------");
+		System.out.println("Merged tree:");
+		iterator = inventory1.iterator();
+		while (iterator.hasNext()) {
+			System.out.print(iterator.next().getKey());
+			System.out.print(" ");
+		}
 		
 		//Node x = myTree.find(41);
 		//System.out.println(x.getKey());
