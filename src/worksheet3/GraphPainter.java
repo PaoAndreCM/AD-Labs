@@ -2,7 +2,7 @@
  * B-REE3-VSP HAW Hamburg
  * 
  * Created on : 10-12-2020
- * Author     : Björn Gottfried
+ * Author     : Bjï¿½rn Gottfried
  *
  *-----------------------------------------------------------------------------
  * Revision History (Release 1.0.0.0)
@@ -124,13 +124,13 @@ public class GraphPainter extends Canvas {
 		
 		// Print all the vertices and their neighbours
 		for (int v = 0; v < g.numOfVertices(); v++) {
-			System.out.print("Nachbarn von Ecke "+v+":");
+			System.out.print("Neighbors from corner "+v+":");
 			AdjacencyList adjList = g.getNeighboursFor(v);
 			for (Integer neighbour: adjList) {
 				System.out.print(" " + neighbour.toString());
 			}
 			System.out.println();
 		}
-		System.out.println("Anzahl Kanten: "+g.numOfEdges());
+		System.out.println("Number of Edges: "+g.numOfEdges());
 	}
 }
