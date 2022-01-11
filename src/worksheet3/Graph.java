@@ -50,6 +50,8 @@ public class Graph {
 		int v = u;
 		
 		// repeat this code as many times as the length desired
+		// TODO perhaps it is better to use a while loop so we have better
+		//      control of when to update the index?
 		for (int i = 0; i < length; i++) {
 			// generates a random number between 0 and 7 (the available vertices)
 			Random rand2 = new Random();
@@ -59,7 +61,9 @@ public class Graph {
 			if (adjList.contains(vertexToBeAdded)) {
 				// adds vertex to path if it is in the adjacency list of v
 				path.add(vertexToBeAdded);
-				v = u++;
+				// TODO it doesn't need to move to the next v but rather 
+				//      to the next number in adjacency list
+				v = v++;
 			} else {
 				// if vertex isn't in adjacency list, it doesn't get added
 				// and index doesn't change

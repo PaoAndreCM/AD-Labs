@@ -110,7 +110,7 @@ public class GraphPainter extends Canvas {
 		
 		GraphPainter painter = new GraphPainter(g);
 
-		AdjacencyList aPath = g.somePath(0, 3);
+		AdjacencyList aPath = g.somePath(5, 12);
 		painter.setAPath(aPath);
 		
 		// Print all the vertices and their neighbours
