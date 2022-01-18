@@ -52,5 +52,10 @@ public class AdjacencyList implements Iterable<Integer> {
 	public int size() {
 		return adjacencies.size();
 	}
+	
+	public int get(int i) {
+		return adjacencies.get(i);
+		
+	}
 
 }

@@ -38,47 +38,60 @@ public class Graph {
 		return neighboursMatrix.get(u, v);
 	}
 
-/* 
- * TODO find out why path generated ins't always connected
- *      find out why path isn't always the length required
- **/  
 	public AdjacencyList somePath(int u, int length) {
 		// creates adjacency list which will contain the path
 		AdjacencyList path = new AdjacencyList(u);
-		
-		// assigns u to a dummy variable v which will get updated in the loop
-		int v = u;
-		
-		// repeat this code as many times as the length desired
-		// TODO perhaps it is better to use a while loop so we have better
-		//      control of when to update the index?
+
 		for (int i = 0; i < length; i++) {
-			// generates a random number between 0 and 7 (the available vertices)
-			Random rand2 = new Random();
-			int vertexToBeAdded = rand2.nextInt(7);
-			AdjacencyList adjList = this.getNeighboursFor(v);
-			// checks that random number is in the adjacency list of v
-			if (adjList.contains(vertexToBeAdded)) {
-				// adds vertex to path if it is in the adjacency list of v
-				path.add(vertexToBeAdded);
-				// TODO it doesn't need to move to the next v but rather 
-				//      to the next number in adjacency list
-				v = v++;
-			} else {
-				// if vertex isn't in adjacency list, it doesn't get added
-				// and index doesn't change
-				i--;	
-			}
+			// add u to path
+			path.add(u);
 			
-			// This is another way to achieve a path:
+			// find adjacency list of u
+			AdjacencyList adjList = this.getNeighboursFor(u);
 			
-			// generate adjacency list of node of interest (initially u)
-			// select random number from said adjacency list
-			// selected number is new node of interest
-			// repeat
+			// choose one number from adjList randomly:
+			// generate one random number from 0 to adj size
+			Random randIndex = new Random();
+			int randomIndex = randIndex.nextInt(adjList.size());
+			//System.out.println("This is the random generated index " + randomIndex);
+			
+			// get the number in that index
+			int vertexToBeAdded = adjList.get(randomIndex);
+			//System.out.println("This is the number that will be added to the path " + vertexToBeAdded);
+
+			// update u
+			u = vertexToBeAdded;
 			
 		}
+		
+		// Print path
+		System.out.print("Path: ");
+		for (int v = 0; v < path.size(); v++) {
+			System.out.print(path.get(v) +  " ");
+		}
+		System.out.println();
+
+//		// repeat this code as many times as the length desired
+//		for (int i = 0; i < length; i++) {
+//			// generates a random number between 0 and 7 (the available vertices)
+//			Random rand2 = new Random();
+//			int vertexToBeAdded = rand2.nextInt(7);
+//			AdjacencyList adjList = this.getNeighboursFor(u);
+//			// checks that random number is in the adjacency list of v
+//			if (adjList.contains(vertexToBeAdded)) {
+//				// adds vertex to path if it is in the adjacency list of v
+//				path.add(vertexToBeAdded);
+//				// TODO it doesn't need to move to the next v but rather 
+//				//      to the next number in adjacency list
+//				u = vertexToBeAdded;
+//			} else {
+//				// if vertex isn't in adjacency list, it doesn't get added
+//				// and index doesn't change
+//				i--;	
+//			}
+
 		return path;
+
 	}
 
 }
